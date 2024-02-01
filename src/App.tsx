@@ -10,7 +10,10 @@ function App() {
   useEffect(() => {
     getListMovies('avengers')
       .unwrap()
-      .then((res) => setMenu(res.Search))
+      .then((res) => {
+        localStorage.setItem('listMovies', JSON.stringify(res.Search))
+        setMenu(res.Search)
+      })
   }, [])
   console.log(menu)
   console.log(movies.data, 'dadaaata')
@@ -18,7 +21,7 @@ function App() {
 
   return (
     <div>
-      <div className=' flex flex-col p-4'>
+      <div className=' flex flex-col py-4 px-8'>
         <div className='flex flex-row  items-center'>
           <h1 className='text-2xl text-[#2596be] px-6 '>Search Movies</h1>
           <div className={`relative w-[327px] h-[51px]`}>
