@@ -1,33 +1,45 @@
 export type MovieListProps = {
     Search: MoviesResponseProps[]
 }
-
-
-export type GameListProps = {
-    categories: string[]
+export type ParamProps = {
     name: string
-    image: string
+    language: string
+    key: string
     id: string
+  }
+
+export type DetailMovieProps = {
+    Title: string
+    Year: string
+    Rated: string
+    Released: string
+    Runtime: string
+    Genre: string
+    Director: string,
+    Writer: string
+    Actors: string
+    Plot: string
+    Language: string
+    Country: string
+    Awards: string
+    Poster: string
+    Ratings: RatingProps[]
+    Metascore: string
+    imdbRating: string
+    imdbVotes: string
+    imdbID: string
+    Type: string
+    DVD: string
+    BoxOffice: string
+    Production: string
+    Website: string
+    Response: string
 }
 
-
-export type AmountListProps = {
-    game: string
-    amount: number
+export type RatingProps = {
+    Source: string
+    Value: string
 }
-
-export type GameListResProps = {
-    data: GameListProps[]
-}
-
-
-export type ParamsFilterProps = {
-    _id: string
-    title: string
-    filter: string
-    url: string
-}
-
 
 export type MoviesResponseProps = {
   Title: string

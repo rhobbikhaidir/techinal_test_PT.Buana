@@ -6,7 +6,7 @@ import {
   fetchBaseQuery,
   createApi
 } from "@reduxjs/toolkit/query/react";
-import type { MovieListProps } from "modules/types";
+import type { DetailMovieProps, MovieListProps } from "modules/types";
 
 const baseUrl = "http://www.omdbapi.com";
 
@@ -51,10 +51,16 @@ export const API = createApi({
         method: "GET",
       }),
     }),
+    getDetailMovies: builder.mutation<DetailMovieProps, string>({
+      query: (param) => ({
+        url: `/?apikey=448af22c&i=${param}`,
+        method: "GET",
+      }),
+    }),
   }),
 });
 
 
-export const { useGetListMoviesMutation } = API
+export const { useGetListMoviesMutation, useGetDetailMoviesMutation  } = API
 
 
