@@ -3,6 +3,7 @@ import storage from "redux-persist/lib/storage";
 import { FLUSH, PAUSE, PERSIST, PURGE, REGISTER, REHYDRATE, persistReducer } from "redux-persist";
 import { setupListeners } from "@reduxjs/toolkit/query";
 import { API } from "./api";
+import allMovies from "./allMovies";
 
 const presistConfig = {
     key: 'root',
@@ -12,6 +13,7 @@ const presistConfig = {
 
 
 const rootReducer = combineReducers({
+    allMovies: allMovies,
     [API.reducerPath] : API.reducer
 })
 

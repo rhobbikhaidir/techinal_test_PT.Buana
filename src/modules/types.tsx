@@ -54,3 +54,7 @@ export type  MyObject = {
     id: number;
     name: string;
   };
+
+ export  type AllMoviesProps =  {
+    allMovies: MoviesResponseProps[]
+}
