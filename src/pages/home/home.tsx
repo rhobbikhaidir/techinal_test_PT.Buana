@@ -131,7 +131,7 @@ const Home = () => {
         {movies.isLoading && <Loading />}
 
         <div className='grid grid-cols-1 gap-1 sm:grid-cols-2 sm:gap-1  md:grid-cols-3 md:gap-2  lg:grid lg:grid-cols-5 lg:gap-4'>
-          {state.allMovies &&
+          {state.allMovies.length > 0 &&
             state.allMovies?.map((res, index) => (
               <div
                 key={index}
